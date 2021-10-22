@@ -1,6 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
+# add .idea to gitignore
 configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
@@ -36,51 +37,37 @@ dotfiles_files:
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
   - git
   - github/gh/gh
-  - go
-  - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
   - node
   - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
   - wget
-  - wrk
   - zsh-history-substring-search
+  - jenv
+  - maven
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - adoptopenjdk/openjdk
+#  echo 'eval "$(jenv init -)"' >> ~/.zprofile
+#  source ~/.zprofile
+#  jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-{whatever_version_was_installed}.jdk/Contents/Home/
+#  jenv global openjdk64-1.8.0.{whatever_build_was_installed}
+#  echo 'export PATH="$HOME/.jenv/bin:$PATH"' > ~/.zprofile
+#  echo 'eval "$(jenv init -)"' >> ~/.zprofile
+#  jenv enable-plugin maven
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
-  - firefox
   - google-chrome
-  - handbrake
-  - licecap
   - sequel-ace
   - slack
   - sublime-text
-  - transmit
-  - vagrant
+  - adoptopenjdk8
+  - intellij-idea
+  - postman
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -92,14 +79,6 @@ osx_script: "~/.osx --no-restart"
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
-composer_packages: []
-# - name: drush
-#   state: present # present/absent, default: present
-#   version: "^8.1" # default: N/A
-gem_packages: []
-# - name: bundler
-#   state: present # present/absent/latest, default: present
-#   version: "~> 1.15.1" # default: N/A
 npm_packages: []
 # - name: webpack
 #   state: present # present/absent/latest, default: present
